@@ -12,21 +12,21 @@ function change() {
 }
 
 function sliderNext() {
-    change();
       if(slideIndex + 1 == arrSlide.length) {
         slideIndex = 0;
       } else {
         slideIndex++;
       }
+      change();
 }
 
 function sliderPrev() {
-    change();
       if(slideIndex - 1 == -1) {
         slideIndex = arrSlide.length-1;
       } else {
         slideIndex--;
       }
+      change();
 }
 
 
