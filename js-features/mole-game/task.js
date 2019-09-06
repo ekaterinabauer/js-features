@@ -6,10 +6,13 @@ let lost = document.getElementById("lost");
 
 for (let index = 1; index <= 9; index++) {
 
-	let hole = document.getElementById(`hole${index}`);
+	function getHole (index) {
+		let hole = document.getElementById(`hole${index}`);
+		hole.onclick = game;
+	}
 
-	hole.onclick = function() {
-		if (hole.className.includes("hole_has-mole") === true) {
+	function game() {
+		if (this.className.includes("hole_has-mole") === true) {
 			dead.textContent++;
 		} else {
 			lost.textContent++;
@@ -23,6 +26,9 @@ for (let index = 1; index <= 9; index++) {
 			alert ("Вы проиграли");
 			dead.textContent = 0;
 			lost.textContent = 0;
-			}
+		}
 	}
+	getHole (index);
 }
+
+	
