@@ -25,9 +25,9 @@ class Game {
 	function getSymbol (event) {
        let keyLetter = String.fromCharCode(event.charCode);
        if (letter === keyLetter) {
-       	document.success();
+       	this.success();
        } else {
-       	document.fail();
+       	this.fail();
        }
     }
 
