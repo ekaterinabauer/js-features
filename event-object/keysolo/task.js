@@ -17,21 +17,15 @@ class Game {
   }
 
   registerEvents() {
-    let str = document.querySelectorAll('.symbol');
-    let arrStr = Array.from(str);
-
-  	let letter = this.currentSymbol.textContent;
-  
-	function getSymbol (event) {
-       let keyLetter = String.fromCharCode(event.charCode);
-       if (letter === keyLetter) {
-       	this.success();
-       } else {
-       	this.fail();
-       }
-    }
-
-	let keyLetter = document.addEventListener ('keypress', getSymbol);
+    document.addEventListener ('keypress', (event) => {
+      let key = String.fromCharCode(event.charCode).toUpperCase();
+      let symbol = this.currentSymbol.textContent.toUpperCase();
+      if (key === symbol) {
+        this.success();
+      } else {
+        this.fail()
+      }
+    })
   }
 
   success() {
