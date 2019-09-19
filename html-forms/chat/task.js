@@ -14,8 +14,8 @@ let minutes = ("0"+ min).slice(-2);
 let time = `${hours}:${minutes}`;
 
 function sendMessage(event) {
-  input.innerHTML = input.innerHTML + " required";
-  if(event.charCode == 13 ){
+  
+  if(event.charCode == 13 && input.value != ""){
     messages.innerHTML += 
     `<div class="message message_client">
     <div class="message__time">${time}</div>
